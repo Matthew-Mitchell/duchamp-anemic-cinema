@@ -1,6 +1,6 @@
 new p5();
 
-let min=100;
+let min=60;
 let max=600;
 let step=20;
 var centers=[];
@@ -18,19 +18,20 @@ function setup() {
   strokeWeight(4); // Thicker
   }
 var angle = 0;
-var speed = 0.0025;
+var speed = 0.05;
 function draw(){
   let count = 0;
+  // angle += speed;
   for ( let r=max; r>=min; r+= -step) {
-    angle += speed;
+    angle += (speed * (50/r^2))
     let sinval = sin(angle);
     let cosval = cos(angle);
     if ((r%(2*step))==0){
-        fill(255);
+        fill(0);
         var x = centers[count][0] + sinval*4;
         var y = centers[count][1] + cosval*4;
       }
-        else {fill(0);
+        else {fill(255);
              var x = centers[count][0] + sinval*3;
             var y = centers[count][1] + cosval*3;}   
     ellipse(x,y,r,r);
