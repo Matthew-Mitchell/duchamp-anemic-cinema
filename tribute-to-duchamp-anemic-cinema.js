@@ -27,12 +27,12 @@ function draw(){
     let cosval = cos(angle);
     if ((r%(2*step))==0){
         fill(255);
-        var x = centers[count][0] + sinval*4;
-        var y = centers[count][1] + cosval*4;
+        var x = centers[count][0] + sinval*(r/6);
+        var y = centers[count][1] + cosval*(r/6);
       }
         else {fill(0);
-             var x = centers[count][0] + sinval*3;
-            var y = centers[count][1] + cosval*3;}   
+             var x = centers[count][0] + sinval*(r/8);
+            var y = centers[count][1] + cosval*(r/8);}   
     ellipse(x,y,r,r);
     count += 1;
   }
